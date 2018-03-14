@@ -1,3 +1,4 @@
+@@ -0,0 +1,79 @@
 import RoboPiLib as RPL
 RPL.RoboPiInit("/dev/ttyAMA0",115200)
 import sys, tty, termios, signal
@@ -12,9 +13,6 @@ import sys, tty, termios, signal
 def stopAll():
     pass
 
-i = RPL.servoRead(0)
-j = RPL.servoRead(1)
-
 def open():
   RPL.servoWrite(0, 500)
   RPL.servoWrite(1, 2500)
@@ -25,29 +23,23 @@ def close():
   RPL.servoWrite(1, 2000)
   print "close"
 
-def bigopen():
-  RPL.servoWrite(0,i-60)
-  RPL.servoWrite(1,j+60)
-  print "bigopen"
-
-def bigclose():
-  RPL.servoWrite(0,i+60)
-  RPL.servoWrite(1,j-60)
-  print "bigclose"
+i = RPL.servoRead(0)
+j = RPL.servoRead(1)
 
 def stepopen():
-  RPL.servoWrite(0,i-10)
-  RPL.servoWrite(1,j+10)
-  print "step open"
+    RPL.servoWrite(0,i-10)
+    RPL.servoWrite(1,j+10)
+    print "step open"
 
 def stepclose():
-  RPL.servoWrite(0,i+10)
-  RPL.servoWrite(1,j-10)
-  print "step close"
+    RPL.servoWrite(0,i+10)
+    RPL.servoWrite(1,j-10)
+    print "step close"
 
 def printpos():
   print RPL.servoRead(0)
   print RPL.servoRead(1)
+
 
 
 fd = sys.stdin.fileno()
@@ -78,10 +70,6 @@ while True:
       open()
     elif ch == "w":
       close()
-    elif ch == "a":
-      bigopen()
-    elif ch == "s":
-      bigclose()
     elif ch == "z":
       stepopen()
     elif ch == "x":
