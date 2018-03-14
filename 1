@@ -12,6 +12,9 @@ import sys, tty, termios, signal
 def stopAll():
     pass
 
+i = RPL.servoRead(0)
+j = RPL.servoRead(1)
+
 def open():
   RPL.servoWrite(0, 500)
   RPL.servoWrite(1, 2500)
@@ -45,10 +48,6 @@ def stepclose():
 def printpos():
   print RPL.servoRead(0)
   print RPL.servoRead(1)
-
-i = RPL.servoRead(0)
-j = RPL.servoRead(1)
-
 
 
 fd = sys.stdin.fileno()
