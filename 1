@@ -25,6 +25,16 @@ def close():
 i = RPL.servoRead(0)
 j = RPL.servoRead(1)
 
+def bigopen():
+    RPL.servoWrite(0,i-10)
+    RPL.servoWrite(1,j+10)
+    print "bigopen"
+
+def bigclose():
+        RPL.servoWrite(0,i+10)
+        RPL.servoWrite(1,j-10)
+        print "bigclose"
+
 def stepopen():
     RPL.servoWrite(0,i-10)
     RPL.servoWrite(1,j+10)
@@ -69,6 +79,10 @@ while True:
       open()
     elif ch == "w":
       close()
+    elif ch == "a":
+      bigopen()
+    elif ch == "s":
+      bigclose()
     elif ch == "z":
       stepopen()
     elif ch == "x":
