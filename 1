@@ -22,9 +22,6 @@ def close():
   RPL.servoWrite(1, 2000)
   print "close"
 
-i = RPL.servoRead(0)
-j = RPL.servoRead(1)
-
 def bigopen():
     RPL.servoWrite(0,i-10)
     RPL.servoWrite(1,j+10)
@@ -48,6 +45,9 @@ def stepclose():
 def printpos():
   print RPL.servoRead(0)
   print RPL.servoRead(1)
+
+i = RPL.servoRead(0)
+j = RPL.servoRead(1)
 
 
 
