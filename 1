@@ -26,24 +26,24 @@ def close():
   print "close"
 
 def bigopen():
-    RPL.servoWrite(0,i-60)
-    RPL.servoWrite(1,j+60)
-    print "bigopen"
+  RPL.servoWrite(0,i-60)
+  RPL.servoWrite(1,j+60)
+  print "bigopen"
 
 def bigclose():
-        RPL.servoWrite(0,i+60)
-        RPL.servoWrite(1,j-60)
-        print "bigclose"
+  RPL.servoWrite(0,i+60)
+  RPL.servoWrite(1,j-60)
+  print "bigclose"
 
 def stepopen():
-    RPL.servoWrite(0,i-10)
-    RPL.servoWrite(1,j+10)
-    print "step open"
+  RPL.servoWrite(0,i-10)
+  RPL.servoWrite(1,j+10)
+  print "step open"
 
 def stepclose():
-    RPL.servoWrite(0,i+10)
-    RPL.servoWrite(1,j-10)
-    print "step close"
+  RPL.servoWrite(0,i+10)
+  RPL.servoWrite(1,j-10)
+  print "step close"
 
 def printpos():
   print RPL.servoRead(0)
